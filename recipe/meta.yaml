@@ -1,4 +1,4 @@
-{% set version = '1.0.0' %}
+{% set version = "1.0.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spocc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spocc/spocc_{{ version }}.tar.gz
-  sha256: bc6d6800f2daec5d8a5204bc90f6442885593a024e895d29c8460b33aa78ec51
+  sha256: c0ff994a444510c25ed21b816f02562453c96613be431a09421e7e91d79af4d5
 
 build:
   merge_build_host: True  # [win]
