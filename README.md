@@ -5,11 +5,9 @@ Home: https://github.com/ropensci/spocc (devel), https://ropensci.github.io/spoc
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-spocc-feedstock/blob/master/LICENSE.txt)
 
 Summary: A programmatic interface to many species occurrence data sources, including Global Biodiversity Information Facility ('GBIF'), 'USGSs' Biodiversity Information Serving Our Nation ('BISON'), 'iNaturalist', Berkeley 'Ecoinformatics' Engine, 'eBird', Integrated Digitized 'Biocollections' ('iDigBio'), 'VertNet', Ocean 'Biogeographic' Information System ('OBIS'), and Atlas of Living Australia ('ALA'). Includes functionality for retrieving species occurrence data, and combining those data.
-
-
 
 Current build status
 ====================
