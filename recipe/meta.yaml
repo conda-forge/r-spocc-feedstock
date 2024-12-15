@@ -56,10 +56,10 @@ test:
     - r-taxize
     - r-vcr
   commands:
-    - $R -e "library('spocc')"                          # [not win]
-    - $R -e "testthat::test_package('spocc')"           # [not win]
-    - "\"%R%\" -e \"library('spocc')\""                 # [win]
-    - "\"%R%\" -e \"testthat::test_package('spocc')\""  # [win]
+    - $R -e "library('spocc')"                                               # [not win]
+    - NOT_CRAN=TRUE $R -e "testthat::test_package('spocc')"                  # [not win]
+    - "\"%R%\" -e \"library('spocc')\""                                      # [win]
+    - set NOT_CRAN=TRUE && "\"%R%\" -e \"testthat::test_package('spocc')\""  # [win]
 
 about:
   home: https://ropensci.github.io/spocc/
