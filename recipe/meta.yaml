@@ -12,7 +12,7 @@ source:
   sha256: ee14de78a9a91bf4220b3317d724f9e4953fda8b5478b2083690c984903db951
 
 build:
-  number: 1
+  number: 2
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -51,12 +51,19 @@ requirements:
     - r-whisker
 
 test:
+  requires:
+    - r-testthat
+    - r-taxize
+    - r-vcr
   commands:
-    - $R -e "library('spocc')"           # [not win]
-    - "\"%R%\" -e \"library('spocc')\""  # [win]
+    - $R -e "library('spocc')"                                               # [not win]
+    - NOT_CRAN=TRUE $R -e "testthat::test_package('spocc')"                  # [not win]
+    - "\"%R%\" -e \"library('spocc')\""                                      # [win]
+    - set NOT_CRAN=TRUE && "\"%R%\" -e \"testthat::test_package('spocc')\""  # [win]
 
 about:
-  home: https://github.com/ropensci/spocc (devel), https://ropensci.github.io/spocc/ (user manual)
+  home: https://ropensci.github.io/spocc/
+  dev_url: https://github.com/ropensci/spocc
   license: MIT
   summary: A programmatic interface to many species occurrence data sources, including Global Biodiversity Information Facility ('GBIF'), 'USGSs' Biodiversity Information Serving Our Nation ('BISON'), 'iNaturalist', Berkeley 'Ecoinformatics' Engine, 'eBird', Integrated Digitized 'Biocollections' ('iDigBio'), 'VertNet', Ocean
     'Biogeographic' Information System ('OBIS'), and Atlas of Living Australia ('ALA'). Includes functionality for retrieving species occurrence data, and combining those data.
