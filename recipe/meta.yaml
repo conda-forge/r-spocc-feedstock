@@ -1,4 +1,4 @@
-{% set version = "1.2.3" %}
+{% set version = "1.2.4" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spocc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spocc/spocc_{{ version }}.tar.gz
-  sha256: ee14de78a9a91bf4220b3317d724f9e4953fda8b5478b2083690c984903db951
+  sha256: 2d136f50a566865ae05ee49d63606e046f06caa2b55725ca8424901d49a36d99
 
 build:
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
